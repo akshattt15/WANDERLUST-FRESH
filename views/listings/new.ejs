@@ -1,0 +1,68 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row justify-content-center my-4">
+  <div class="col-12 col-md-8">
+
+    <h2 class="mb-4 text-center listing-heading">CREATE NEW LIST</h2>
+
+    <style>
+      .listing-heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #b22222; /* reddish heading */
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      }
+    </style>
+
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="title" placeholder="Enter title" type="text" class="form-control" required>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea placeholder="Enter your content" name="description" class="form-control" rows="4" required></textarea>
+      </div>
+
+      <!-- Image URL -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input name="image" placeholder="Paste image URL" type="text" class="form-control">
+      </div>
+
+      <!-- Upload Image -->
+      <div class="mb-4">
+        <label for="image" class="form-label">Upload Image</label>
+        <input name="image" type="file" class="form-control">
+      </div>
+
+      <!-- Price & Country side by side -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-6">
+          <label for="price" class="form-label">Price</label>
+          <input name="price" placeholder="Enter price" type="number" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label for="country" class="form-label">Country</label>
+          <input name="country" placeholder="Enter country" type="text" class="form-control" required>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="mb-4">
+        <label for="location" class="form-label">Location</label>
+        <input name="location" placeholder="Enter location" type="text" class="form-control" required>
+      </div>
+
+      <!-- Submit -->
+      <div class="d-grid">
+        <button class="btn btn-dark py-2 add-btn">ADD LISTING</button>
+      </div>
+
+    </form>
+  </div>
+</div>

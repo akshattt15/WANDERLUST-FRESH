@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate") %>
+<%= success %> 
+
+<div class="container my-5">
+  <h1 class="text-center mb-4" style="color:#b22222; text-shadow:1px 1px 2px rgba(0,0,0,0.2);">All Listings</h1>
+
+  <div class="row g-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
+    <% alllistings.forEach(listing => { %>
+      <div class="col">
+        <a href="/listings/<%=listing._id%>" class="text-decoration-none">
+          <div class="card listing-card h-100">
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing Image" style="height: 20rem; object-fit: cover;">
+            
+            <div class="card-body">
+              <h5 class="card-title listing-title"><%= listing.title %></h5>
+              <p class="card-text">
+                &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> / night
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<style>
+.listing-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.listing-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #b22222; /* slightly reddish, matches button */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.card-text {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .listing-card img {
+    height: 18rem;
+  }
+}
+
+/* Ensure 1 card per row on mobile */
+@media (max-width: 576px) {
+  .row-cols-1 {
+    flex-wrap: wrap;
+  }
+}
+</style>
+
