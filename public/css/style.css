@@ -110,3 +110,68 @@ color:rgb(252, 252, 252);
     
 
 }
+/* Ensure navbar stays above all content */
+.navbar {
+  z-index: 1000;
+}
+
+/* Navbar link styles */
+.navbar .nav-link {
+  color: #222 !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+  color: #007bff !important;
+}
+
+/* ----- MOBILE VIEW STYLING ----- */
+@media (max-width: 992px) {
+  /* Collapsed menu container */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    /* Transparent black background with blur */
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    padding: 1rem 0.5rem;
+    
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    animation: fadeDown 0.3s ease-in-out;
+  }
+
+  /* Nav links inside collapsed menu */
+  .navbar-nav .nav-link {
+    color: #ffffff !important;
+    display: block;
+    text-align: center;
+    font-size: 1.05rem;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+
+ 
+  .navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+  }
+
+  /* Brand size for small screens */
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation for smooth dropdown */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

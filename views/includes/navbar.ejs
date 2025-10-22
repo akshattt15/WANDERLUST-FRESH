@@ -1,25 +1,42 @@
-<nav class="navbar navbar-expand-lg bg-body-white border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/listings">EXPLORE</a>
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fs-4 fw-bold" href="/listings">
+      <i class="fa-regular fa-compass me-2"></i>Wanderlust
+    </a>
 
-          </div>
-          <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">NEW LISTING</a>
-            <% if(!currUser) { %>
-          <a class="nav-link" href="/signup"><b>SignUp</b></a>
-          <a class="nav-link" href="/login"><b>Log in</b></a>
-          <% } %> 
-           <% if(currUser) { %>
-          <a class="nav-link" href="/logout"><b>Log out</b></a>
-          <% } %>
-          </div>
-        </div>
+    <!-- Toggle Button (for mobile) -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link fw-semibold" href="/listings">EXPLORE</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link fw-semibold" href="/listings/new">NEW LISTING</a>
+
+        <% if (!currUser) { %>
+          <a class="nav-link fw-semibold" href="/signup">Sign Up</a>
+          <a class="nav-link fw-semibold" href="/login">Log In</a>
+        <% } %>
+
+        <% if (currUser) { %>
+          <a class="nav-link fw-semibold" href="/logout">Log Out</a>
+        <% } %>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
